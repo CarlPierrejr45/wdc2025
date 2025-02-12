@@ -7,11 +7,11 @@ header{
     }
     /* Style the header */
     header {
-    background-color: #666;
+    background-color: #ff0000;
     padding: 30px;
     text-align: center;
     font-size: 35px;
-    color: white;
+    color: rgb(255, 0, 0);
     }
     /* Create two columns/boxes that floats next to each other */
     nav {
