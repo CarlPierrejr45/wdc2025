@@ -1,26 +1,32 @@
 function initializePage() {
-    console.log("Page loaded.");
-  
-    document.getElementById("submitButton").addEventListener("click", handleSubmit);
-    document.getElementById("resetButton").addEventListener("click", handleReset);
-    document.getElementById("alertButton").addEventListener("click", showAlert);
-  }
-  
-  function handleSubmit(event) {
-    event.preventDefault(); 
+  const form = document.getElementById("userForm");
+  const resetBtn = document.getElementById("resetButton");
+  const alertBtn = document.getElementById("alertButton");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form from submitting normally
+
     const name = document.getElementById("userName").value;
     const sex = document.getElementById("userSex").value;
     const team = document.getElementById("teamSelect").value;
-    alert(`Submitted! Name: ${name}, Sex: ${team}`);
-  }
-  
-  function handleReset() {
-    document.getElementById("userForm").reset();
-    console.log("Reset");
-  }
-  
-  function showAlert() {
-    alert("Thanks for interacting with the NBA Playoffs page!");
-  }
 
- 
+    const outputDiv = document.getElementById("formOutput");
+    outputDiv.innerHTML = `
+      <div class="alert alert-info mt-3">
+        <strong>Submission Received:</strong><br>
+        Name: ${name}<br>
+        Sex: ${sex}<br>
+        Favorite Team: ${team}
+      </div>
+    `;
+  });
+
+  resetBtn.addEventListener("click", function() {
+    document.getElementById("userForm").reset();
+    document.getElementById("formOutput").innerHTML = "";
+  });
+
+  alertBtn.addEventListener("click", function() {
+    alert("Thanks for checking out the NBA Playoffs site!");
+  });
+}

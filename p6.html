@@ -18,7 +18,7 @@
 
 
 </head>
-<body onload="initializePage()"></bodyonload>>
+<body onload="initializePage()">
 
 <div class="jumbotron text-center  display-4 bg-danger">
   <div class="row">
@@ -158,11 +158,11 @@
       </div>
       <div class="form-group">
         <label for="userSex">Sex:</label>
-        <select class="form-control" id="teamSelect">
-            <option value="Man">Male</option>
-            <option value="Female">Female</option>
-            <option value="Non-Binary">Non-Binary</option>
-          </select>
+        <select class="form-control" id="userSex">
+          <option value="Man">Male</option>
+          <option value="Female">Female</option>
+          <option value="Non-Binary">Non-Binary</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="teamSelect">Favorite Team:</label>
@@ -177,6 +177,7 @@
       <button type="button" class="btn btn-success" id="alertButton">Show Alert</button>
     </form>
   </div>
+  <div id="formOutput"></div>
 
 
 </body>
